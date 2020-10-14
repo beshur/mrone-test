@@ -1,0 +1,11 @@
+<div class="ruleblock">
+  <h2>{{ title }}</h2>
+  <p>{{ description }}</p>
+
+  <div class="rules">
+    <app-rule-item *ngFor="let rule of rules; let i = index" [key]="i" [deleteClick]="itemDelete"></app-rule-item>
+  </div>
+
+
+  <button class="rule-add" (click)="addRule()">New Rule</button>
+</div>

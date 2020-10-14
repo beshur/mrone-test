@@ -1,0 +1,103 @@
+$borderColor: #d2d2d2
+.rule-item
+  display: flex
+  flex: 1
+  margin-bottom: 44px
+
+  &-input
+    flex: 0.4 1 0
+    padding-right: 30px
+
+    &.loc-other
+      display: none
+
+      &:first-child
+        flex: 0.3 1 0
+        display: block
+
+
+    &.loc-custom
+      & + .rule-item-delete
+        padding-left: 15px
+
+    .validation
+      width: 100%
+      height: 0
+      padding: 0 12px
+      visibility: hidden
+      font-size: 14px
+      color: #750C1F
+      background: #FFCFD2
+      border: 1px solid #FBBEC6
+      border-radius: 4px
+      transition: all 0.5s
+      overflow: hidden
+
+      &.invalid
+        padding: 8px 12px
+        visibility: visible
+        height: auto
+
+  select,
+  input
+    display: block
+    width: 100%
+    padding: 8px 12px
+    font-size: 14px
+    color: #333
+    border: 1px solid $borderColor
+    border-radius: 4px
+
+    &::after
+      content: ' '
+      position: absolute
+      z-index: -1
+      // display: none
+      top: 3px
+      left: 3px
+      right: 3px
+      bottom: 3px
+      width: 100%
+      height: 100%
+      border: 3px solid #BEDBFF
+
+    &:active,
+    &:focus
+      border-color: #17A2F5
+
+      &::after
+        display: block
+
+
+  &-delete
+    flex: 0 1 auto
+
+    &:active,
+    &:hover
+      outline: none
+
+    button
+      position: relative
+      margin-top: 8px
+      font-size: 12px
+      background: transparent
+      border: none
+      color: #808080
+      font-weight: bold
+      border-radius: 50%
+      cursor: pointer
+
+      &:active,
+      &:hover
+        outline: none
+        color: red
+
+      &::before
+        content: ''
+        position: absolute
+        border: 2px solid currentColor
+        border-radius: 50%
+        width: 17px
+        height: 17px
+        margin-left: -6px
+        margin-top: -4px
