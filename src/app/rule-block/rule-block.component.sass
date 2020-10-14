@@ -1,0 +1,65 @@
+.ruleblock
+  padding: 20px
+  border: 1px solid #ececec
+  border-radius: 4px
+  margin-bottom: 30px
+  box-shadow: 0 4px 7px -4px #ececec
+
+  h2
+    margin-top: 0
+    margin-bottom: 22px
+    font-weight: normal
+
+    & + p
+      color: #666
+
+  .rules
+    padding-left: 0
+    & > li
+      padding-left: 0
+      list-style-type: none
+
+  .rule-add
+    padding: 12px 16px
+    background: #fff
+    border: 3px solid #81A1C2
+    border-radius: 4px
+    font-size: 16px
+    text-transform: uppercase
+    cursor: pointer
+    transition: all 0.5s
+    outline: none
+
+    &:hover
+      border-color: #ececec
+      background: #ececec
+
+    &:active
+      transform: scale(0.9, 0.9)
+      border-color: #ececec
+      background: #ececec
+
+    &::before
+      content: '+'
+      position: relative
+      top: 0
+      margin-right: 8px
+      font-size: 20px
+
+
+  app-rule-item
+    &::before
+      content: 'OR'
+      position: absolute
+      display: block
+      font-size: 18px
+      font-weight: bold
+      margin-left: 2em
+      margin-top: -1.9em
+      color: #d4d4d4
+
+    &:first-of-type
+      background: green
+      &::before
+        display: none
+

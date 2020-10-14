@@ -1,0 +1,29 @@
+<div class="rule-item">
+  <div class="rule-item-input" [ngClass]="(location=='custom')?'loc-custom':'loc-other'">
+    <select [(ngModel)]="location" name="location">
+      <option value="all">All Pages</option>
+      <option value="home">Home Page</option>
+      <option value="product">Product Pages</option>
+      <option value="password">Password Page</option>
+      <option value="custom">Custom</option>
+    </select>
+
+  </div>
+  <div class="rule-item-input" [ngClass]="(location=='custom')?'loc-custom':'loc-other'">
+    <select [(ngModel)]="condition" name="condition">
+      <option value="like">Contains</option>
+      <option value="where">Exact</option>
+    </select>
+  </div>
+  <div class="rule-item-input" [ngClass]="(location=='custom')?'loc-custom':'loc-other'">
+    <input type="text" [(ngModel)]="url" (change)="urlChanged($event)" name="url" placeholder="Type a full or partial URL" />
+    <div class="validation" [ngClass]="(urlValidation.length )?'invalid':''">
+      {{ urlValidation }}
+    </div>
+  </div>
+
+  <div class="rule-item-delete">
+    <button class="delete" (click)="clickDelete()">&#x2715;</button>
+  </div>
+
+</div>
